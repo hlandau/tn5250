@@ -378,16 +378,8 @@ int tn5250_ssl_stream_init (Tn5250Stream *This)
         methstr[4] = '\0';
    }
 
-   if (!strcmp(methstr, "ssl2")) {
-        meth = SSLv2_client_method();         
-        TN5250_LOG(("SSL Method = SSLv2_client_method()\n"));
-   } else if (!strcmp(methstr, "ssl3")) {
-        meth = SSLv3_client_method();         
-        TN5250_LOG(("SSL Method = SSLv3_client_method()\n"));
-   } else {
-        meth = SSLv23_client_method();         
-        TN5250_LOG(("SSL Method = SSLv23_client_method()\n"));
-   }
+   meth = TLS_client_method();         
+   TN5250_LOG(("SSL Method = TLS_client_method()\n"));
 
 /*  create a new SSL context */
 
