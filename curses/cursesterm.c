@@ -22,6 +22,7 @@
 #define _TN5250_TERMINAL_PRIVATE_DEFINED
 #include "tn5250-private.h"
 #include "cursesterm.h"
+#include <term.h>
 
 #ifdef USE_CURSES
 
