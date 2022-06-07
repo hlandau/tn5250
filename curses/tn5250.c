@@ -20,6 +20,11 @@
 
 #include "tn5250-private.h"
 
+#ifdef USE_CURSES
+#include "cursesterm.h"
+#endif // USE_CURSES
+
+
 Tn5250Session *sess = NULL;
 Tn5250Stream *stream = NULL;
 Tn5250Terminal *term = NULL;
